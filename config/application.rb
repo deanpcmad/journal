@@ -14,7 +14,7 @@ module Journal
       g.stylesheets     false
       g.javascripts     false
       g.helper          false
-      g.test_framework  :rspec, spec: true, fixture: false
+      g.test_framework  false
     end
 
     # Settings in config/environments/* take precedence over those specified here.

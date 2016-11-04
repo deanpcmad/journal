@@ -15,7 +15,6 @@ gem 'bootstrap_form'
 gem 'active_link_to'
 gem 'nifty-utils'
 gem 'will_paginate'
-gem 'bcrypt'
 
 group :development do
   gem 'annotate'
