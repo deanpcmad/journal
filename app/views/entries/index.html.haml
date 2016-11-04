@@ -11,5 +11,5 @@
   %tbody
     - @entries.each do |entry|
       %tr
-        %td= entry.date
+        %td= link_to entry.date, entry
         %td= entry.content

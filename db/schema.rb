@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161104200449) do
+ActiveRecord::Schema.define(version: 20161104201638) do
+
+  create_table "attachments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
+    t.integer  "entry_id"
+    t.string   "file"
+    t.string   "name"
+    t.integer  "size"
+    t.string   "extension"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["entry_id"], name: "index_attachments_on_entry_id", using: :btree
+  end
 
   create_table "entries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci" do |t|
     t.text     "content",    limit: 65535
@@ -19,4 +30,5 @@ ActiveRecord::Schema.define(version: 20161104200449) do
     t.datetime "updated_at",               null: false
   end
 
+  add_foreign_key "attachments", "entries"
 end
