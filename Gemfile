@@ -15,8 +15,11 @@ gem 'bootstrap_form'
 gem 'active_link_to'
 gem 'nifty-utils'
 gem 'will_paginate'
+gem 'carrierwave'
+gem 'fog'
 
 group :development do
+  gem 'dotenv-rails'
   gem 'annotate'
   gem 'powder'
   gem 'app_reset'
