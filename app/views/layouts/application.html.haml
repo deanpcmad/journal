@@ -1,9 +1,26 @@
 !!!
 %html
   %head
-    %title  - journal
+    %title Journal
+    = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
-    = stylesheet_link_tag "application"
     = csrf_meta_tags
+
+    %meta{content: "width=device-width, user-scalable=no,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0", name: "viewport"}
   %body
-    = yield
+    %nav.navbar.navbar-default.navbar-static-top
+      .container
+        .navbar-header
+          %button.navbar-toggle.collapsed{"aria-controls" => "navbar", "aria-expanded" => "false", "data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          = link_to "Journal", root_path, class: "navbar-brand"
+        #navbar.navbar-collapse.collapse
+          %ul.nav.navbar-nav
+            = active_link_to "Entries", entries_path, wrap_tag: :li#, active: :exact
+
+    .container.content
+      = display_flash
+      = yield
