@@ -17,6 +17,7 @@ gem 'nifty-utils'
 gem 'will_paginate'
 gem 'carrierwave'
 gem 'fog'
+gem 'mini_magick'
 
 group :development do
   gem 'dotenv-rails'

@@ -1,7 +1,20 @@
-%p
-  %b Date
-  = @entry.date
+.page-header
+  .pull-right
+    = link_to "Edit", edit_entry_path(@entry), class: "btn btn-primary"
+    = link_to "New Attachment", new_entry_attachment_path(@entry), class: "btn btn-primary"
+  %h1 Entry ##{@entry.id} for #{@entry.date.to_s(:long)}
 
-%p
-  %b Content
-  = simple_format @entry.content
+= simple_format @entry.content
+
+%hr
+
+- @attachments.each do |attach|
+  %ul
+  - if attach.image?
+    %li
+      = link_to image_tag(attach.file.url(:thumb)), attach.file.url
+      = link_to fa_icon("trash"), entry_attachment_path(@entry, attach), method: :delete, data: {confirm: "Are you sure?"}
+  - else
+    %li
+      = link_to attach.name, attach.file.url
+      = link_to fa_icon("trash"), entry_attachment_path(@entry, attach), method: :delete, data: {confirm: "Are you sure?"}

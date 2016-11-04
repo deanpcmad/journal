@@ -7,6 +7,7 @@ class EntriesController < ApplicationController
   end
 
   def show
+    @attachments = @entry.attachments.load
   end
 
   def new
