@@ -3,7 +3,7 @@ class EntriesController < ApplicationController
   before_action { params[:id] && @entry = Entry.find(params[:id]) }
 
   def index
-    @entries = Entry.all.order(created_at: :desc)
+    @entries = Entry.all.order(date: :desc)
   end
 
   def show
