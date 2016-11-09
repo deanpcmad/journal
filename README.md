@@ -35,12 +35,6 @@ You should see some output like so:
 
 ![](https://files.deanpcmad.com/2016/Xw3GZE573T.png)
 
-## To Do
-
-- Better design
-- Add a Calendar
-- Create a better way of viewing and editing entries
-
 ## Contributing
 
 - Fork this app
