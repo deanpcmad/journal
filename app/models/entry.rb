@@ -5,4 +5,10 @@ class Entry < ApplicationRecord
   validates :date, presence: true
   validates :content, presence: true
 
+  scope :ordered, -> { order(date: :asc) }
+
+  def title
+    "##{id}"
+  end
+
 end

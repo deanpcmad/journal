@@ -3,13 +3,6 @@
     = link_to "New Entry", new_entry_path, class: "btn btn-primary"
   %h1 Entries
 
-%table.table.table-striped
-  %thead
-    %tr
-      %th Date
-      %th Excerpt
-  %tbody
-    - @entries.each do |entry|
-      %tr
-        %td= link_to entry.date, entry
-        %td= entry.content
+#calendar
+
+= render "entries/modal"

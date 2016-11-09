@@ -1,0 +1,13 @@
+.modal.fade#createEntryModal
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button{type: "button", class: "close", data: {dismiss: "modal"}} &times;
+        %h4.modal-title Create Entry
+
+      .modal-body
+        = bootstrap_form_for Entry.new do |f|
+          = f.text_field :date
+          = f.text_area :content
+          = f.submit
+

@@ -1,8 +1,6 @@
-.page-header
-  .pull-right
-    = link_to "Edit", edit_entry_path(@entry), class: "btn btn-primary"
-    = link_to "New Attachment", new_entry_attachment_path(@entry), class: "btn btn-primary"
-  %h1 Entry ##{@entry.id} for #{@entry.date.to_s(:long)}
+%h3 Entry ##{@entry.id} for #{@entry.date.to_s(:long)}
+
+%hr
 
 = simple_format @entry.content
 
@@ -18,3 +16,6 @@
     %li
       = link_to attach.name, attach.file.url
       = link_to fa_icon("trash"), entry_attachment_path(@entry, attach), method: :delete, data: {confirm: "Are you sure?"}
+
+= link_to "Edit", edit_entry_path(@entry), class: "btn btn-primary btn-sm"
+= link_to "New Attachment", new_entry_attachment_path(@entry), class: "btn btn-primary btn-sm"
