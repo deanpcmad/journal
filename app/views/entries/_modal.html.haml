@@ -8,6 +8,5 @@
       .modal-body
         = bootstrap_form_for Entry.new do |f|
           = f.text_field :date
-          = f.text_area :content
+          = f.text_area :content, autofocus: true
           = f.submit
-
