@@ -30,7 +30,7 @@ class EntriesController < ApplicationController
     if @entry.save
       redirect_to entries_path
     else
-      render :new
+      render action: "form"
     end
   end
 
@@ -38,7 +38,7 @@ class EntriesController < ApplicationController
     if @entry.update_attributes(safe_params)
       redirect_to entries_path
     else
-      render :new
+      render action: "form"
     end
   end
 
