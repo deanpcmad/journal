@@ -3,7 +3,7 @@
 This is a small Rails 5 app for creating a Journal. I built this as a quick
 alternative to Day One.
 
-![](https://files.deanpcmad.com/2016/N78jkgV5Nr.png)
+![](https://files.deanpcmad.com/2016/pNpaoI0o1p.png)
 
 ## Usage
 
